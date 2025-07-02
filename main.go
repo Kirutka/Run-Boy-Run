@@ -212,21 +212,21 @@ func (g *Game) LoadImages() {
 	var err error
 	
 	// Загрузка изображения машины
-	g.objects["car"], err = loadImageFromFile("bus.png", 64, 32)
+	g.objects["car"], err = loadImageFromFile("image/bus.png", 64, 32)
 	if err != nil {
 		log.Printf("Failed to load car image: %v, using placeholder", err)
 		g.objects["car"] = g.createPlaceholderImage(64, 32, color.RGBA{255, 0, 0, 255})
 	}
 	
 	// Загрузка изображения игрока
-	g.objects["player"], err = loadImageFromFile("player.png", 32, 32)
+	g.objects["player"], err = loadImageFromFile("image/player.png", 32, 32)
 	if err != nil {
 		log.Printf("Failed to load player image: %v, using placeholder", err)
 		g.objects["player"] = g.createPlaceholderImage(32, 32, color.RGBA{0, 255, 0, 255})
 	}
 	
 	// Загрузка фонового изображения
-	g.objects["background"], err = loadImageFromFile("back.png", screenWidth, screenHeight)
+	g.objects["background"], err = loadImageFromFile("image/back.png", screenWidth, screenHeight)
 	if err != nil {
 		log.Printf("Failed to load background image: %v, using placeholder", err)
 		g.objects["background"] = g.createPlaceholderImage(screenWidth, screenHeight, color.RGBA{200, 200, 200, 255})
@@ -524,7 +524,7 @@ func (g *Game) drawMenu(screen *ebiten.Image) {
 	g.drawButton(screen, g.buttons["exit_menu"])
 
 	// Версия игры или авторские права
-	versionText := "v1.0 © 2024"
+	versionText := "v1.0"
 	versionBounds := text.BoundString(g.font, versionText)
 	text.Draw(screen, versionText, g.font, screenWidth-versionBounds.Max.X-10, screenHeight-20, color.RGBA{150, 150, 150, 255})
 }
