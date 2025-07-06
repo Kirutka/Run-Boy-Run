@@ -1,10 +1,10 @@
-module mod
+module run-boy-run
 
-go 1.23.0
+go 1.24.0
 
 require (
-	github.com/hajimehoshi/ebiten/v2 v2.8.6
-	golang.org/x/image v0.20.0
+	github.com/hajimehoshi/ebiten/v2 v2.8.8
+	golang.org/x/image v0.30.0
 )
 
 require (
